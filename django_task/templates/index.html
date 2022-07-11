@@ -17,18 +17,25 @@
     <div class="text-center">
       
       <div>
-        <form class="needs-validation">
+        <form class="needs-validation" method="post">
+          {% csrf_token %}
           <div class="row g-3">
             <div class="col-12">
               <label for="address" class="form-label">URL</label>
-              <input type="text" class="form-control" id="address" placeholder="http://somesite.com" required>
+              <input name="url" type="text" class="form-control" id="address" placeholder="http://somesite.com" required>
+              <div>
+                {{ error }}
+              </div>
             </div>
           </div>
-
+          <div>
+            <a href="{{ generated_url }}">{{ generated_url }}</a>
+          </div>
           <hr class="my-4">
 
           <button class="w-100 btn btn-primary btn-lg" type="submit">Сократить</button>
         </form>
+        
       </div>
     </div>
   </main>
