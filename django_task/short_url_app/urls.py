@@ -23,7 +23,7 @@ urlpatterns = [
     # path('login/', LoginView.as_view(template_name='accounts/login.html')),
     path('', lambda _ : redirect('./url/')),
     path('url/', views.UrlView.as_view()),
-    path('show-url/', views.UrlView.as_view()),
+    path('show-url/', views.UrlTableView.as_view()),
     re_path(r'^(?P<short_url>[0-9a-zA-Z]{6})\/?$', views.GeneratedUrlView.as_view()),
     path('sign-up/', views.SignUp.as_view()),
     # path('url/', views.index)

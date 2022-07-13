@@ -31,6 +31,13 @@ class UrlView(LoginRequiredMixin, View):
         new_url = f'{ "http://" + req.get_host() + "/" + url_model.short_url}'
         return render(req, 'index.html', {'generated_url':f'{new_url}'})
 
+class UrlTableView(LoginRequiredMixin, View):
+    def get(self, req):
+        user = req.user
+        urls = URL.objects.filter(user = user)
+        host = f'{ "http://" + req.get_host() + "/"}'
+        return render(req, 'urltable.html', {'urls' : tuple(urls), 'host' : host})
+
 class GeneratedUrlView(View):
     def get(self, req, short_url):
         redirect_url = URL.objects.filter(short_url = short_url)
