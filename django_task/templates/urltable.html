@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+  My URLs
+{% endblock title %}
+
+{% block body %}
+<h2>Сгенерированные URL</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Полный URL</th>
+        <th scope="col">Короткий URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for url in urls %}
+      <tr>
+        <td><a href="{{url.sourse_url}}">{{url.sourse_url}}</a></td>
+        <td><a href="{{host}}{{url.short_url}}">{{host}}{{url.short_url}}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}

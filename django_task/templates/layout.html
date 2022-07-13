@@ -10,6 +10,24 @@
     <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet">
     {% block head %}{% endblock head %}
 </head>
-{% block body %}
-{% endblock body %}
+<body class="text-center">
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a href="/url/" class="nav-link active" aria-current="page">Сгенерировать URL</a></li>
+            <li class="nav-item"><a href="/show-url/" class="nav-link">Просмотр URL</a></li>
+            {% else %}
+            <li class="nav-item"><a href="/sign-up/" class="nav-link active" aria-current="page">Зарегистрироваться</a></li>
+            <li class="nav-item"><a href="/login/" class="nav-link">Зайти</a></li>
+            {% endif %}
+          </ul>
+        </header>
+      </div>
+      
+      <div class="b-example-divider"></div>    
+    {% block body %}
+    {% endblock body %}
+</body>
+    <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>

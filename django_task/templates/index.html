@@ -6,16 +6,13 @@
 {% endblock title %}
 
 {% block body %}
-<body class="text-center">
 <div class="container">
   <main>
     <div class="py-5 text-center">
       <h2>Создать краткий URL</h2>
       <p class="lead"></p>
     </div>
-
     <div class="text-center">
-      
       <div>
         <form class="needs-validation" method="post">
           {% csrf_token %}
@@ -32,16 +29,11 @@
             <a href="{{ generated_url }}">{{ generated_url }}</a>
           </div>
           <hr class="my-4">
-
           <button class="w-100 btn btn-primary btn-lg" type="submit">Сократить</button>
         </form>
-        
       </div>
     </div>
   </main>
-
 </div>
-  <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
 {% endblock body %}

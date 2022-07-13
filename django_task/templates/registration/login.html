@@ -11,8 +11,6 @@
 {% endblock head %}
 
 {% block body %}
-<body class="text-center">
-    
 <main class="form-signin">
   <form method="post">
     {% csrf_token %}
@@ -31,8 +29,4 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
   </form>
 </main>
-
-
-    
-  </body>
 {% endblock body %}
