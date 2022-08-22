@@ -156,4 +156,4 @@ task/
 
 launch.json
 
-migrations
+.vscode
